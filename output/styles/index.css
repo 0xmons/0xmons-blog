@@ -1,0 +1,44 @@
+body {
+  font-family: 'Courier New', Courier, monospace;
+  color: white;
+  background-color: black;
+}
+
+/* Title stylings */
+.title {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.post-title a {
+  font-size: 1.75rem;
+  color: greenyellow !important;
+}
+
+.word-count {
+  color: rgb(165, 165, 165);
+}
+
+.last-updated {
+  color: rgb(165, 165, 165);
+}
+
+/* For phones, full-width */
+.content {
+  margin: auto;
+  width: 100%;
+}
+/* For tablets and above */
+@media only screen and (min-width: 700px) {
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 10fr 1fr;
+  }
+}
+/* For normal computer width */
+@media only screen and (min-width: 1200px) {
+  .content {
+    max-width: 42rem;
+  }
+}

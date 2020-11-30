@@ -1,0 +1,16 @@
+{
+    "CONTENTS_DIR": "contents/",
+    "METADATA_DIR": "metadata/",
+    "OUTPUT_DIR": "output/",
+    "PAGE_DIR": "page/",
+    "TEMPLATES_DIR": "templates/",
+    "BASE_PATH": "base.html",
+    "POST_PATH": "post.html",
+    "INDEX_PATH": "index.html",
+    "PAGE_PATH": "page.html",
+    "POST_INDEX": "POST_INDEX.json",
+    "PAGE_INDEX": "PAGE_INDEX.json",
+    "LAST_UPDATED": 1606767186.05965,
+    "MAX_SUMMARY_LENGTH": 150,
+    "TITLE": "0xmons-blog"
+}
