@@ -4,6 +4,10 @@ body {
   background-color: black;
 }
 
+.post-link {
+  margin-bottom: 2rem;
+}
+
 /* Title stylings */
 .title {
   font-size: 2.5rem;

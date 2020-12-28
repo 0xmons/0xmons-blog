@@ -5,16 +5,11 @@ body {
 }
 
 /* Title stylings */
-.title {
-  font-size: 2.5rem;
-  text-align: center;
-  margin-bottom: 1rem;
-}
-
 .post-title {
-  font-size: 1.75rem;
+  font-size: 2.75rem;
   color: greenyellow !important;
   text-align: center;
+  font-weight: bold;
 }
 
 .content {
@@ -23,6 +18,21 @@ body {
 
 .last-updated {
   color: rgb(165, 165, 165);
+}
+
+.hidden {
+  color: rgb(40, 40, 40);
+}
+
+a {
+  color: rgb(136, 212, 22);
+}
+
+img {
+  max-width: 50rem;
+  height: auto;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 
 /* For phones, full-width */
