@@ -228,6 +228,12 @@ def update_contents():
 
 
 
+def minify_HTML(path):
+  os.system("html-minifier --remove-comments --collapse-whitespace --preserve-line-breaks --minify-urls true " + path + "> " + path + ".min")
+  os.system("mv " + path + ".min" + " " + path)
+
+
+
 def update_index():
   c = get_paths()["INDEX"]
   # Check if index template has been updated

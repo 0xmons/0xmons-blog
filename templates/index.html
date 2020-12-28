@@ -6,7 +6,7 @@
 {% endblock head %}
 
 {% block content %}
-  {% for p in data|dictsort('last_updated', reverse=true) %}
+  {% for p in data|dictsort('last_updated', reverse=false) %}
   <div class="post-link">
     <div class="post-title">
       <a href="{{ './%s.html'%p[1].anchor }}">{{ p[1].title }}</a>
