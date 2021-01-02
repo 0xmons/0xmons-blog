@@ -10,7 +10,7 @@ Here is everything that is happening to the project:
 
 1) No more XMON fees! In order to make integrations with other contracts easier, I've set the transfer fee of XMON to be 0, as seen [here](https://etherscan.io/tx/0xe92d172ecafa98171163706e1b0f757d32cf1872d8e6b45baf8fc9181f889228 ). Note that I have not yet renounced ownership, so the option to bring it back in the future still remains.
 
-2) LP mining is starting next week! I've set up a rewards pool for XMON-ETH LP for 2 weeks that starts Tuesday Jan 5 at 18:00 UTC. The contract is [here](https://etherscan.io/address/0xd4275e04dbe82526e4a17ac0fb8f509b6080a455#readContract). The 0xmons website has also been updated with a UI to make staking and claiming rewards easier. The initial farming rewards are 50 XMON over two weeks; emissions are kept intentionally small at first to avoid supply shock and opportunistic farm-and-dumpers.
+2) LP mining is starting next week! I've set up a rewards pool for XMON-ETH LP for 2 weeks that starts Tuesday Jan 5 at 18:00 UTC. The contract is [here](https://etherscan.io/address/0xd4275e04dbe82526e4a17ac0fb8f509b6080a455#readContract). The 0xmons website has also been updated with a UI to make staking and claiming rewards easier, as well as a countdown timer [here](https://0xmons.xyz/#/farm). The initial farming rewards are 50 XMON over two weeks; emissions are kept intentionally small at first to avoid supply shock and opportunistic farm-and-dumpers.
 
 Summoning (and then spawning) will come soon after, hopefully 1 week into LP farming.
 
