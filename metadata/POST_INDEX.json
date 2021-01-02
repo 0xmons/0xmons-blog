@@ -1,18 +1,18 @@
 {
-    "78697766310": {
-        "title": "New 0xmons blog",
-        "anchor": "78697766310",
-        "summary": "Yes. This is a self-referential post talking about the creation of this blog.\n...",
-        "word_count": 13,
-        "date": "2020-11-30 12:25",
-        "last_updated": 1606767915
-    },
     "78650466310": {
         "title": "0xmons v1 Launch",
         "anchor": "78650466310",
         "summary": "The initial launch of the 0xmons platform is coming soon. Version 1 (Azathoth) will be releasing with three main components: Farming, Summoning, and S...",
-        "word_count": 1267,
-        "date": "2020-12-28 07:08",
-        "last_updated": 1609168132
+        "word_count": 1286,
+        "date": "2021-01-02 12:57",
+        "last_updated": 1609621073
+    },
+    "79085966310": {
+        "title": "0xmons Project Updates",
+        "anchor": "79085966310",
+        "summary": "This post will give an update on the XMON distribution and other project updates. To start, there has been a lot of good discussion about the best way...",
+        "word_count": 505,
+        "date": "2021-01-02 14:32",
+        "last_updated": 1609626776
     }
 }

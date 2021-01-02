@@ -30,7 +30,9 @@ Once the project goes live, you will be able to stake XMON-ETH LP tokens to acqu
 
 ![farming pictures](https://i.imgur.com/9nyfoai.png)
 
-The tentative plan is to distribute 800 tokens over 1 month for liquidity mining, and then extend that over additional months with more tokens.
+~~The tentative plan is to distribute 800 tokens over 1 month for liquidity mining, and then extend that over additional months with more tokens.~~
+
+See this post for updated farming details.
 
 # Summoning
 At launch, there will be 2 ways to acquire 0xmon NFTs directly from the contracts. The first is to stake your XMON tokens to acquire DOOM, and then redeem the DOOM for monsters. This is similar to how users redeem Pineapples for collectibles in MEME.
@@ -60,7 +62,9 @@ That being said, this initial alpha launch still carries risk, so please keep th
 
 (Thanks to [@ecsypz](https://twitter.com/ecsypz) for the token design.)
 
-XMON has an adjustable dev fee on transfer. It can be set from 0% to 10%, and it is currently set to 1%. Thus, when buying on Uniswap, you will need to set slippage above 1% to avoid errors.
+~~XMON has an adjustable dev fee on transfer. It can be set from 0% to 10%, and it is currently set to 1%. Thus, when buying on Uniswap, you will need to set slippage above 1% to avoid errors.~~
+
+The XMON fee is now set to 0%. It trades like any other ERC-20.
 
 **Note that XMON is not a governance token. It is only used as a utility token for the 0xmons NFT platform.**
 

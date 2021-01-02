@@ -237,7 +237,7 @@ def minify_HTML(path):
 def update_index():
   c = get_paths()["INDEX"]
   # Check if index template has been updated
-  if need_to_update(c["TEMPLATE"]):
+  if True:
     # Remove old index
     try: 
       os.remove(c["OUTPUT"])
