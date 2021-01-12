@@ -35,6 +35,16 @@ img {
   padding-bottom: 1rem;
 }
 
+.centered {
+  text-align: center;
+  margin: 0.5rem 0.5rem;
+}
+.home {
+  font-size: 1.25rem;
+  color: greenyellow !important;
+  text-align: center;
+}
+
 /* For phones, full-width */
 .content {
   margin: auto;
