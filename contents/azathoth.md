@@ -91,7 +91,7 @@ This includes:
 
 Additionally, the Azathoth summoning and spawning contracts are experimental. There may be future deployments of new ways to mint the 0xmon NFT.
 
-Those tracking the XMON holders will know that the deployer address currently has the remaining 8,800 tokens. To reduce worries about rug-pulling, I'll be moving the funds to a multisig wallet. Because the community is still nascent, I've reached out to three public devs I know (and recommend!), and they've agreed to become signers for the remaining XMON tokens after initial bounties and farming pool are distributed.
+To reduce worries about rug-pulling, the remaining funds have been moved to a multisig wallet. Because the community is still nascent, I've reached out to three public devs I know (and recommend!), and they've agreed to become signers for the remaining XMON tokens after initial bounties and farming pool are distributed.
 
 They are:
 
@@ -100,8 +100,6 @@ They are:
 3. [Alex](https://twitter.com/alexgausman) from [NFTX](https://nftx.org/#/), an index fund for different NFTs that allows anyone to create a new NFT fund.
 
 As the project grows, and we see people take up bounties / contribute to the project, I hope to eventually add on more 0xmons community members to the multisig. For now, these three devs serve as a sanity check to make sure I don't do anything reckless like dump all the tokens on Uniswap.
-
-**Note this has not happened yet, so please trade with caution. I will make another post once all the tokens have been distributed and accounted for.**
 
 # Future
 That's all for now! As I outlined in the Introduction, there is more that I want to develop after the initial launch, but the above outlines what is already live.
