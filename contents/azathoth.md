@@ -1,6 +1,6 @@
 title: 0xmons v1 Launch
 
-The initial launch of the 0xmons platform is coming soon. Version 1 (Azathoth) will be releasing with three main components: Farming, Summoning, and Spawning. In this post, I'll give an introduction to the platform, the three main components, the XMON token, and my thoughts on governance.
+The initial launch of the 0xmons platform is now live! Version 1 (Azathoth) is now released with two main components: Farming and Summoning. (Spawning is a planned feature coming later on.) In this post, I'll give an introduction to the platform, the three main components, the XMON token, and my thoughts on governance.
 
 # Introduction
 
@@ -17,36 +17,44 @@ The machine learning part is what drives the intrigue around the NFTs. Many proj
 ![monster 4](https://i.imgur.com/iuPFsZ1.gif)
 ![monster 5](https://i.imgur.com/8Qn3f1d.gif)
 
-Currently, the image generation is happening off-chain, but I have a few ideas I want to explore regarding on-chain registries and verification of each monster's image data. More on that after launch.
+Currently, the image generation is happening off-chain, but I have a few ideas I want to explore regarding on-chain registries and verification of each monster's image data. This will be next focus now that Azathoth is live.
 
-As for the creative part, there's a whole mythos that's being developed along with these pixel monsters. You can look forward to a unique, interesting backstory for your 0xmon NFT. A lot of that backstory is also AI-generated, and I'll be sharing more details, again, after launch.
+As for the creative part, there's a whole mythos that's being developed along with these pixel monsters. You can look forward to a unique, interesting backstory for your 0xmon NFT. This backstory is also AI-generated, human-curated.
 
-After v1 Azathoth, I'll be making sure things are running smoothly and pushing front-end updates. The next big updates to look out for will be the Lore Update, the Registry Update, and the Trading Update. Not necessarily in that order, though. Long-term, I want to build out turn-based battling on an L2 solution, but that is far from the development phase at this time.
+So, what makes 0xmons cool?
 
-So, without further ado, here is what will be available when Azathoth goes live:
+1. **Fully unique NFT:** Unlike other projects, every single 0xmon is 1 of 1. No one else will have the same 0xmon with your animation, name, epithet, or lore.
+2. **Human-AI hybrid creativity:** Each 0xmon's animation, name, epithet, and lore was originally AI generated, and then hand-tweaked by a human (me!) This allows for a very interesting type of joint creative content that is currently rare in the NFT space.
+3. **Onchain data:** (In Development) I'm currently working on a way for 0xmon users to encode their 0xmon's data directly on chain which solidifies their digital presence and allows for true art ownership, even if IPFS fails.
 
 # Farming
-Once the project goes live, you will be able to stake XMON-ETH LP tokens to acquire more XMON tokens. This is the normal farming you're used to, no extra gimmicks. 
+You can currently stake XMON-ETH LP tokens to acquire more XMON tokens. This is the normal farming you're used to, no extra gimmicks. 
 
 ![farming pictures](https://i.imgur.com/9nyfoai.png)
 
 ~~The tentative plan is to distribute 800 tokens over 1 month for liquidity mining, and then extend that over additional months with more tokens.~~
 
-See this post for updated farming details.
+See [this post](https://blog.0xmons.xyz/78686666310) for updated farming details.
 
 # Summoning
-At launch, there will be 2 ways to acquire 0xmon NFTs directly from the contracts. The first is to stake your XMON tokens to acquire DOOM, and then redeem the DOOM for monsters. This is similar to how users redeem Pineapples for collectibles in MEME.
+Right now, you can stake your XMON tokens to acquire DOOM, and then redeem the DOOM for 0xmon NFTs. This is similar to how users redeem Pineapples for collectibles in MEME.
 
 ![summoning picture](https://i.imgur.com/AyenAiD.png)
 
 The DOOM cost to summon a 0xmon goes up with subsequent summons. The summoner contract is deployed to mainnet [here](https://etherscan.io/address/0xd06337a401b468657de2f9d3e390ce5b21c3c1c0#code).
 
-# Spawning
-The second method is to acquire 2 0xmons and then use them to spawn a third. Spawning takes an XMON fee. At launch, each pair of 0xmons can only be bred together once, e.g. monster A and monster B can only spawn 1 offspring. After spawning, there will be a delay before the monsters can spawn again.
+The initial parameters (subject to change) are:
+
+* Max stake: 12 XMON
+* Time to redeem first 0xmon: 1 week
+* Time to redeem subsequent 0xmons: 1 additional week per summon
+
+# Spawning (In Development)
+The second method will be to acquire two 0xmons and then use them to spawn a third. Spawning takes an XMON fee. At launch, each pair of 0xmons can only be bred together once, e.g. monster A and monster B can only spawn 1 offspring. After spawning, there will be a delay before the monsters can spawn again.
 
 ![spawning screenshot](https://i.imgur.com/oxrkIaI.png)
 
-Later generation 0xmons will require longer delays between spawns. The spawning contract is deployed to mainnet [here](https://etherscan.io/address/0x4fad5ddc4e0186b932e27baa7d37d97457dfc868).
+Later generation 0xmons will require longer delays between spawns. The current spawning contract is deployed to mainnet [here](https://etherscan.io/address/0x4fad5ddc4e0186b932e27baa7d37d97457dfc868). Note that it is not live and future versions may be deployed.
 
 # Security
 Please note, **none of the 0xmons contracts have been audited**.
@@ -96,9 +104,9 @@ As the project grows, and we see people take up bounties / contribute to the pro
 **Note this has not happened yet, so please trade with caution. I will make another post once all the tokens have been distributed and accounted for.**
 
 # Future
-That's all for now! As I outlined in the Introduction, there is more that I want to develop after the initial launch, but the above will give you a taste of what's going to be released soon.
+That's all for now! As I outlined in the Introduction, there is more that I want to develop after the initial launch, but the above outlines what is already live.
 
-There isn't a finalized date for the v1 Azathoth launch yet, so keep an eye out on Telegram, Discord, or Twitter for updates. I'll set up a countdown and let everyone know a few days in advance once everything is ready.
+My next large-scale addition to the ecosystem will be creating a way for users to directly encode their 0xmon images on-chain. This will consist of an encoding library and a decoding library that other projects can also use. My first focus will be on static images, so the animations won't be on-chain, but future innovations could change this.
 
 <span class="hidden">... thus the spirits beckon. No quarter shall be given to the lost lamb, but so in vain are their wanderings, that the paucity of relent shall scarcely go noticed. Dismiss the trepidation...</span>
 
