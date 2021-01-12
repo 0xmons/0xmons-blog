@@ -1,6 +1,6 @@
 title: 0xmons v1 Launch
 
-The initial launch of the 0xmons platform is now live! Version 1 (Azathoth) is now released with two main components: Farming and Summoning. (Spawning is a planned feature coming later on.) In this post, I'll give an introduction to the platform, the three main components, the XMON token, and my thoughts on governance.
+The initial launch of the [0xmons](0xmons.xyz) platform is now live! Version 1 (Azathoth) is now released with two main components: Farming and Summoning. (Spawning is a planned feature coming later on.) In this post, I'll give an introduction to the platform, the three main components, the XMON token, and my thoughts on governance.
 
 # Introduction
 
