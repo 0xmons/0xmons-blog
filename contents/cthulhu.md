@@ -55,7 +55,7 @@ If this is your first time, and you want the front-end to handle everything, sim
 
 If you only send the first transaction and want to come back to do the actual registration, simply save the transaction hash of the encoding transaction (i.e. the one that makes the `uploadMon` function call), and paste it into the input field. You can then register at your leisure.
 
-Astute readers may have noticed that it is still "feasible" to encode the entirety of the static 0xmon image directly into the contract's storage. The gas costs for doing so are still incredible high, anywhere from 1,000,000 to 4,000,000 gas, and this is just for the *non-animated* image. Nonetheless, for the purists with ETH to burn, I've also added a direct upload option that writes the encoded payload directly to the contract. I've yet to add the front-end to fully support decoding this becuase I myself haven't spent the ETH to encode an image fully, but if anyone does so, please me know so I can use it to test the front-end. :^)
+Astute readers may have noticed that it is still "feasible" to encode the entirety of the static 0xmon image directly into the contract's storage. The gas costs for doing so are still incredibly high, anywhere from 1,000,000 to 4,000,000 gas, and this is just for the *non-animated* image. Nonetheless, for the purists with ETH to burn, I've also added a direct upload option that writes the encoded payload directly to the contract. I've yet to add the front-end to fully support decoding this becuase I myself haven't spent the ETH to encode an image fully, but if anyone does so, please me know so I can use it to test the front-end. :^)
 
 ![Direct upload screenshot](https://i.imgur.com/OZJAmUG.png)
 
