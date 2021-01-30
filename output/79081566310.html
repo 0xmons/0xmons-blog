@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  
+  <!-- Block for title, css, scripts, etc.-->
+  
+<title>0xmons v2 Cthulhu: On-chain Encoding</title>
+<link rel="stylesheet" href="./styles/post.css">
+
+  
+</head>
+
+<body>
+
+  <div class="centered">
+  <a href="https://0xmons.xyz" class="home">0xmons Home</a>
+  </div>
+  
+  
+
+
+  <div class="grid">
+    <div class="grid_spacer"></div>
+    <!-- Block for content -->
+    <div class="content">
+      
+<div class="post-title">0xmons v2 Cthulhu: On-chain Encoding</div>
+<div class="content"><p>I&#8217;m excited that 0xmons can now be encoded directly on the Ethereum blockchain. Sort of. This post will explain the thinking behind why I&#8217;m so excited by this update, the technical details that make it work, and how to encode your 0xmons yourself.</p>
+
+<h1>Why On-chain?</h1>
+
+<p>First, let&#8217;s talk art and NFTs. One criticism of the default ERC-721 standard is that it doesn&#8217;t define a standard for on-chain metadata. Instead, we get a <code>tokenURI</code> that points to a JSON which lives somewhere. &#8220;Somewhere&#8221; is often a server, which can be problematic if it goes down. Not only that, but it seems to go against the ethos of digital art being traded on an immutable ledger. If ownership is tracked in this secure, public way, but the actual art itself is sequestered away on AWS somewhere, then what are you actually trading? </p>
+
+<p>A common stopgap used in projects nowadays is to host either the metadata or the image (or both) directly on IPFS. This can be ideal because IPFS is cheap and decentralized, and it provides immutability guarantees for the data–if the content changes, so does the hash. For providing distributed access to the underlying metadata, I think this is a sensible solution. However, I think for purists, the argument for full on-chain availability rests on removing any other external dependence. If the asset is being tracked on Ethereum, then we also want the asset itself (if it bills itself as a digital asset) to also be on Ethereum in some way. No additional references to other layers or protocols.</p>
+
+<p>This reduces external dependencies, which means increased reliability and increased decentralization. It increases the sense of ownership and durability, which means a stronger narrative around your digital collectible.</p>
+
+<p>Because of this, I think on-chain storage of metadata has a strong case for being a large value add to NFTs which can go the extra mile to implement this. On-chain data storage means that your asset <em>literally</em> lives on Ethereum, and people trading it can rely on the same immutability guarantees that they use to ensure their ownership of the asset itself.</p>
+
+<p>Two standout NFT projects which have gone the extra mile to provide such guarantees to their users are <a href="https://twitter.com/AvaStarsNFT">Avastars</a> and <a href="https://twitter.com/tinyboxesETH">TinyBoxes</a>. Both projects, however, take a generative approach. Avastars uses layering of SVGs and TinyBoxes create the SVG in the transaction itself. Generative approaches are more amenable to on-chain storage because they can be precomputed in some way beforehand. Avastars has the different SVG strings stored on the contract to compose, and Artblocks stores the code itself for the art generation.</p>
+
+<p><img src="https://pbs.twimg.com/profile_images/1355563618092380166/hjnPoPwu_400x400.jpg" alt="sample Avastar image" />
+<img src="https://pbs.twimg.com/profile_images/1355180638815531008/Sus3en2D_400x400.jpg" alt="tinyBox logo" /></p>
+
+<h1>How To Do It?</h1>
+
+<p>However, 0xmons is not a generative project in the composable sense. Yes, the images come from a generative model. But the images are generated from a GAN which is at least a gigabyte in size, factoring in all the libraries and model parameters. There is no way to store the model parameters needed directly in contract storage, much less implement the thorny matrix multiplication libraries needed to make it all work. Furthermore, the images are not built up from smaller images, so we can&#8217;t even rely on precomputation in any form to give us a boost.</p>
+
+<p>The solution I am using unfortunately does not move the GAN on-chain. It also does not move the direct image into contract storage. Instead, I took some notes from a 2017 project about putting <a href="https://old.reddit.com/r/ethereum/comments/6qijeq/boobies_on_the_blockchain_a_practical_experiment/">boobs on the blockchain</a>. Those familiar with L2 solutions and storage hacks may already see where this is going. That&#8217;s right, we&#8217;re going to egregiously take advantage of cheap calldata.</p>
+
+<p>Before that, an aside on why directly storing the 0xmon images is not very feasible. After all, I&#8217;ve only given reasons why we can&#8217;t store the model on-chain (it clearly greatly exceeds the 24kb limit) and why we can&#8217;t compose the images from smaller pieces (there is no composition used to create the images). The answer, of course, is gas costs. It currently costs 20,000 gas to store a <code>uint256</code> (i.e. 256 bits = 32 bytes) directly into smart contract storage. Even with lossless GIF compression, the 0xmons images range anywhere from 10kb to 50kb in size. The costs of doing a full write, assuming a very dense packing is still around 6,000,000 gas, which is around half of the block gas limit. And that&#8217;s only on the most conservative side of things!</p>
+
+<p>Contract storage is expensive, but <em>calldata storage</em> is not. An update to the EVM in 2019 changed the gas costs of storing a byte to be <a href="https://eips.ethereum.org/EIPS/eip-2028">only 16 gas</a>. This means that if we upload the full 0xmons animations, we&#8217;re looking at costs of around 400,000 to 2,000,000 gas. This is much more manageable. However, this is also where the trade-offs come in. Contract storage is always accessible. Calldata is <em>not</em>. Calldata is only saved by full nodes, and while it&#8217;s needed for accurate recreation of the blockchain, it may not be saved on fast nodes and light clients.</p>
+
+<p>What is calldata, anyway, and how do we store it? Well, here&#8217;s what <code>uploadMons</code> looks like in the new <a href="https://etherscan.io/address/0x2d824d66e1b7ba0f73b5caf75886abf812a13e67#code">0xmons registry contract</a>:</p>
+
+<p><img src="https://i.imgur.com/XjTJSkq.png" alt="uploadMons screenshot" /></p>
+
+<p>If you&#8217;ll notice, it does…nothing. It doesn&#8217;t need to! Calldata refers to the inputs passed into functions, so all we need to do to record our data is to make a function call. But then how do we access the data? We can do so through the transaction hash which uniquely identifies each transaction. From there, we can look at the parameters passed into the <code>uploadMon</code> function call through the <code>input</code>. Here is what one such upload transaction looks like on Etherscan:</p>
+
+<p><img src="https://i.imgur.com/Or4kHGT.png" alt="etherscan TX" /></p>
+
+<p>In this transaction, the <code>bytes</code> passed in from the <code>Data</code> field encode the data for one 0xmon, and we can access this from any front-end we choose. But, this data is also not available to other smart contracts. This is the another drawback to using calldata (aside from the availability of a connection to a full node). However, for the 0xmons project, I decided the trade-off was worth it to enable the most affordable encoding of the full animation. </p>
+
+<p>Then, once we have the input stored, we can save the transaction hash in a mapping on the contract so we know which hash to lookup in the future. Unfortunately, there&#8217;s one more gotcha–transactions do not have access to their own hash. This means we can&#8217;t make both store the data (via the input) and update the on-chain mapping in one function call. So what actually happens is: First, we make an &#8220;empty&#8221; transaction to store the encoed data. Then, we make a call to the registry contract to store the transaction hash from the first transaction.</p>
+
+<p>One last question someone might have is how the 0xmons image data is actually encoded. Given that the images are all pixel art, an immediate thought might be to get extra clever with densely packing pixel information into the <code>uint256</code>, perhaps with reference to another mapping of values to hex colors. I tried that, and perhaps surprisingly, it wasn&#8217;t as effficient. It turns out that the native GIF encoding, once optimized with <a href="https://www.lcdf.org/gifsicle/man.html">gifsicle</a> still does a better job. I guess this is a situation where trying to roll your own compression doesn&#8217;t work out.</p>
+
+<h1>Encoding Your 0xmons</h1>
+
+<p>Now, let&#8217;s go over what the actual process is like for doing your on-chain encoding. First, you can only encode 0xmons that you own. If you head over to the page of a 0xmon that you own, you&#8217;ll be greeted with a new menu on the bottom:</p>
+
+<p><img src="https://i.imgur.com/xrRQrK7.png" alt="new register menu" /></p>
+
+<p>There is a dropdown that lets you select between Static and Animated. This refers to the 0xmon image. In both cases, the name, epithets, and lore will also be encoded into the payload. Even though the 400,000-2,000,000 gas estimate is &#8220;more reasonable&#8221; to encode a 0xmon, I&#8217;ve also added the option to encode just the static image which should be around 10 times less expensive, i.e. around 40,000 to 200,000 gas to encode.</p>
+
+<p>If this is your first time, and you want the front-end to handle everything, simply select if you wish to encode the static or animated image, and hit the Upload button. As the picture above describes, there will be three transactions you have to accept in order to make things work. The first encodes the image in the input field. The second approves the registry contract to spend XMON for the register fee, and the third actually adds the transaction hash to the contract&#8217;s mapping.</p>
+
+<p>If you only send the first transaction and want to come back to do the actual registration, simply save the transaction hash of the encoding transaction (i.e. the one that makes the <code>uploadMon</code> function call), and paste it into the input field. You can then register at your leisure.</p>
+
+<p>Astute readers may have noticed that it is still &#8220;feasible&#8221; to encode the entirety of the static 0xmon image directly into the contract&#8217;s storage. The gas costs for doing so are still incredible high, anywhere from 1,000,000 to 4,000,000 gas, and this is just for the <em>non-animated</em> image. Nonetheless, for the purists with ETH to burn, I&#8217;ve also added a direct upload option that writes the encoded payload directly to the contract. I&#8217;ve yet to add the front-end to fully support decoding this becuase I myself haven&#8217;t spent the ETH to encode an image fully, but if anyone does so, please me know so I can use it to test the front-end. :^)</p>
+
+<p><img src="https://i.imgur.com/OZJAmUG.png" alt="Direct upload screenshot" /></p>
+
+<p>So, what happens after this process finishes?</p>
+
+<p>Your 0xmon will get two shiny new icons on the front-end!</p>
+
+<p><img src="https://i.imgur.com/XSNQLlQ.png" alt="image of lightning bolt and lock" /></p>
+
+<p>The lightning bolt button lets others know that you&#8217;ve encoded the <em>static</em> data on-chain, while the lock button lets others know that you&#8217;ve encoded the <em>animated</em> data on-chain. You can also click on the icon to take you to a new 0xmons showcase page that reads and decodes directly from on-chain:</p>
+
+<p><img src="https://i.imgur.com/dWMsjd4.png" alt="on-chain version" /></p>
+
+<p>It looks exactly the same.</p>
+
+<p>That&#8217;s the whole point.</p>
+
+<p>I&#8217;ve yet to set up a special icon for those fervent few that decide to encode the entirety of the static image into the contract storage itself, but rest assured there will be a cool distinction between that and the &#8220;normal&#8221; static encoding. Provided, of course, that someone actually goes and does it.</p>
+
+<h1>Conclusion</h1>
+
+<p>With this update, I think it&#8217;s a large enough update to certify this as v2 of the 0xmons project. As I&#8217;ve been alphabetically going down the list of Lovecraftian gods, I think Cthulhu is a dastardly name name, and I&#8217;m excited for this to go live. So we&#8217;ve gone from Azathoth to Cthulhu. </p>
+
+<p>I hope this inspires people working in more non-standard projects that are less amenable to the typical on-chain encoding techniques to consider more creative ways of tying their asset to Ethereum. If you want to learn more about the actual encoding used, feel free to dive into the front-end code or reach out to me at hello (at) 0xmons.xyz or <a href="https://twitter.com/0xmons">Twitter.</a> Ditto if you want to learn more about the failed encoding attempts and my gas benchmark tests.</p>
+
+<p>To all the purists out there, I am afraid I can&#8217;t offer a &#8220;full&#8221; on-chain experience, but I hope you understand given my constraints.</p>
+</div>
+<div class="last-updated">Last Updated: 2021-01-30 15:14</div>
+
+    </div>
+    <div class="grid_spacer"></div>
+  </div>
+</body>
+
+</html>

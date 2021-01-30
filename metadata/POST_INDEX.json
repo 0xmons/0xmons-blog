@@ -3,9 +3,9 @@
         "title": "0xmons v1 Launch",
         "anchor": "78650466310",
         "summary": "The initial launch of the [0xmons](https://www.0xmons.xyz) platform is now live! Version 1 (Azathoth) is now released with two main components: Farmin...",
-        "word_count": 1310,
-        "date": "2021-01-12 11:54",
-        "last_updated": 1610481251
+        "word_count": 1289,
+        "date": "2021-01-20 15:03",
+        "last_updated": 1611183819
     },
     "79085966310": {
         "title": "0xmons Project Updates",
@@ -30,5 +30,13 @@
         "word_count": 13,
         "date": "2020-11-30 12:25",
         "last_updated": 1606767915
+    },
+    "79081566310": {
+        "title": "0xmons v2 Cthulhu: On-chain Encoding",
+        "anchor": "79081566310",
+        "summary": "I'm excited that 0xmons can now be encoded directly on the Ethereum blockchain. Sort of. This post will explain the thinking behind why I'm so excited...",
+        "word_count": 1847,
+        "date": "2021-01-30 15:14",
+        "last_updated": 1612048486
     }
 }

@@ -32,9 +32,7 @@ You can currently stake XMON-ETH LP tokens to acquire more XMON tokens. This is 
 
 ![farming pictures](https://i.imgur.com/9nyfoai.png)
 
-~~The tentative plan is to distribute 800 tokens over 1 month for liquidity mining, and then extend that over additional months with more tokens.~~
-
-See [this post](https://blog.0xmons.xyz/78686666310) for updated farming details.
+See [this post](https://blog.0xmons.xyz/78686666310) for updated farming details and amounts.
 
 # Summoning
 Right now, you can stake your XMON tokens to acquire DOOM, and then redeem the DOOM for 0xmon NFTs. This is similar to how users redeem Pineapples for collectibles in MEME.
