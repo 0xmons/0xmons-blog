@@ -14,8 +14,10 @@ Because of this, I think on-chain storage of metadata has a strong case for bein
 
 Two standout NFT projects which have gone the extra mile to provide such guarantees to their users are [Avastars](https://twitter.com/AvaStarsNFT) and [TinyBoxes](https://twitter.com/tinyboxesETH). Both projects, however, take a generative approach. Avastars uses layering of SVGs and TinyBoxes create the SVG in the transaction itself. Generative approaches are more amenable to on-chain storage because they can be precomputed in some way beforehand. Avastars has the different SVG strings stored on the contract to compose, and Artblocks stores the code itself for the art generation.
 
-![sample Avastar image](https://pbs.twimg.com/profile_images/1355563618092380166/hjnPoPwu_400x400.jpg)
-![tinyBox logo](https://pbs.twimg.com/profile_images/1355180638815531008/Sus3en2D_400x400.jpg)
+![sample Avastar image](https://cliffordhall.com/wp-content/uploads/2020/05/Scroll-to-Discover.png)
+
+
+![tinyBox logo](https://i.imgur.com/H7oN38T.png)
 
 # How To Do It?
 
