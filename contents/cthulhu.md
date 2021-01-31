@@ -37,7 +37,7 @@ If you'll notice, it does…nothing. It doesn't need to! Calldata refers to the 
 
 ![etherscan TX](https://i.imgur.com/Or4kHGT.png)
 
-In this transaction, the `bytes` passed in from the `Data` field encode the data for one 0xmon, and we can access this from any front-end we choose. But, this data is also not available to other smart contracts. This is the another drawback to using calldata (aside from the availability of a connection to a full node). However, for the 0xmons project, I decided the trade-off was worth it to enable the most affordable encoding of the full animation. 
+In this transaction, the `bytes` passed in from the `Data` field encode the data for one 0xmon, and we can access this from any front-end we choose, as long as we have a connection to a node. With tools like Infura and Etherscan, such info is generally available. However, this data is also not available to other smart contracts. This is the other drawback to using calldata (aside from the availability of a connection to a full node). For the 0xmons project, I decided the trade-off was worth it to enable the most affordable encoding of the full animation. 
 
 Then, once we have the input stored, we can save the transaction hash in a mapping on the contract so we know which hash to lookup in the future. Unfortunately, there's one more gotcha–transactions do not have access to their own hash. This means we can't make both store the data (via the input) and update the on-chain mapping in one function call. So what actually happens is: First, we make an "empty" transaction to store the encoed data. Then, we make a call to the registry contract to store the transaction hash from the first transaction.
 
@@ -79,6 +79,10 @@ I've yet to set up a special icon for those fervent few that decide to encode th
 
 With this update, I think it's a large enough update to certify this as v2 of the 0xmons project. As I've been alphabetically going down the list of Lovecraftian gods, I think Cthulhu is a dastardly name name, and I'm excited for this to go live. So we've gone from Azathoth to Cthulhu. 
 
-I hope this inspires people working in more non-standard projects that are less amenable to the typical on-chain encoding techniques to consider more creative ways of tying their asset to Ethereum. If you want to learn more about the actual encoding used, feel free to dive into the front-end code or reach out to me at hello (at) 0xmons.xyz or [Twitter.](https://twitter.com/0xmons) Ditto if you want to learn more about the failed encoding attempts and my gas benchmark tests.
+I hope this inspires people working in more non-standard projects that are less amenable to the typical on-chain encoding techniques to consider more creative ways of tying their asset to Ethereum. To the purists out there, I'm afraid this is the best I can do with what I've got. But I'm sure there are more clever methods out there, waiting to be used.
 
-To all the purists out there, I am afraid I can't offer a "full" on-chain experience, but I hope you understand given my constraints.
+If you want to learn more about the actual encoding used for the data, feel free to dive into the front-end code or reach out to me at hello (at) 0xmons.xyz or [Twitter.](https://twitter.com/0xmons) Ditto if you want to learn more about the failed encoding attempts and my gas benchmark tests.
+
+Otherwise, I cajole you to enjoy cavorting with these cursed collectibles.
+
+<div class="hidden">Everything is totally fine. Yes. Going all exactly to plan. It's been 17 days, 14 hours, and 12 minutes. And they still don't think the monsters are real. Good.</div>
