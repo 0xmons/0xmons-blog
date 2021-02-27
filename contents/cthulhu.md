@@ -77,7 +77,7 @@ I've yet to set up a special icon for those fervent few that decide to encode th
 
 # Conclusion
 
-With this update, I think it's a large enough update to certify this as v2 of the 0xmons project. As I've been alphabetically going down the list of Lovecraftian gods, I think Cthulhu is a dastardly name name, and I'm excited for this to go live. So we've gone from Azathoth to Cthulhu. 
+With this update, I think it's a large enough update to certify this as v2 of the 0xmons project. As I've been alphabetically going down the list of Lovecraftian gods, I think Cthulhu is a dastardly name, and I'm excited for this to go live. So we've gone from Azathoth to Cthulhu. 
 
 I hope this inspires people working in more non-standard projects that are less amenable to the typical on-chain encoding techniques to consider more creative ways of tying their asset to Ethereum. To the purists out there, I'm afraid this is the best I can do with what I've got. But I'm sure there are more clever methods out there, waiting to be used.
 
