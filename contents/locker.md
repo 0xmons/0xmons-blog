@@ -6,17 +6,19 @@ The code and tests can be found on GitHub [here](https://github.com/0xmons/multi
 
 The contract can be found on Etherscan [here](https://etherscan.io/address/0xc653e1b3a971078812a72d11c45ad71e00f3ad1f).
 
-Front-end coming soon (TM).
-
 # Multisender
+
+UI is [here](https://0xmons.xyz/#/multisender).
 
 The first thing this contract allows you to do is bulk-send tokens. You can send ERC20, ERC721, or ERC1155 tokens, but only one token contract at a time. You can send these assets to either a direct list of addresses, or you can send them to a list of ERC721 token holders. This can make it easy to, for example, airdrop tokens to holders of NFTs that you've created.
 
-The cost is 0.025 ETH per multisend, and this fee can be adjusted lower (but never higher!) by the owner (me). The ETH fee goes to the multisig for the 0xmons project.
+The cost is 0.01 ETH per multisend, and this fee can be adjusted lower (but never higher!) by the owner (me). The ETH fee goes to the multisig for the 0xmons project.
 
 However, if you hold at least 1 XMON token or 1 0xmon NFT, it is free to use.
 
 # Generalized Asset Bundle NFTs
+
+UI is [here](https://0xmons.xyz/#/bundler)
 
 The second feature is what I'm incredibly excited about. This contract allows anyone to permissionlessly lock *any* asset–ERC20/721/1155–inside of an ERC721 NFT. Then, only the holder of the NFT can retrieve the locked asset. This is a generalization of my previous sender/locker, which allowed users to lock ERC20 tokens insde of ERC721 NFTs. Now, users can even lock other ERC721s inside! 
 
@@ -47,7 +49,7 @@ And what to call this set of four 0xmons? The first was called the Founders Edit
 
 # Encode Club Results
 
-As some of you may already know, I presented 0xmons at the Encode Club hackathon, and the project took first place! You can can watch the recording of my pitch [here](https://twitter.com/encodeclub/status/1364373949845557253). The other projects were also very cool, and I also highly recommend giving [Float](www.floatprotocol.eth.link) and [revert](www.revert.finance) a look as well.
+As some of you may already know, I presented 0xmons at the Encode Club hackathon, and the project took first place! You can can watch the recording of my pitch [here](https://twitter.com/encodeclub/status/1364373949845557253). The other projects were also very cool, and I also highly recommend giving [Float](https://www.floatprotocol.eth.link) and [revert](https://www.revert.finance) a look as well.
 
 # Roadmap
 
