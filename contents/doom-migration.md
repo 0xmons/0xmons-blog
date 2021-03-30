@@ -20,7 +20,7 @@ That's all you need to do.
 
 However, there are two caveats to this process:
 
-First, each account can only migrate their DOOM once, so it's recommended to start staking in the new contract (details below) after you migrate.
+First, each account can only migrate their DOOM once. Also, migrating your DOOM will overwrite your series 2 DOOM amount. Thus, it is highly recommended to **migrate DOOM first, and then stake into the new contract**. Otherwise, if you migrate after staking in, you could lose some of the DOOM you had already earned for series 2.
 
 Secondly, you **must** migrate your DOOM by Friday, April 02, at 10 am Pacific Time, otherwise you lose the opportunity to migrate. This is also communicated on the UI.
 
