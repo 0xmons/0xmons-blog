@@ -26,7 +26,7 @@ Secondly, you **must** migrate your DOOM by Friday, April 02, at 10 am Pacific T
 
 # Staking 
 
-To stake into the new contract, you'll first need to first unstake from the old contract which is still found at the same link [here](https://0xmons.xyz/#/summon).
+To stake into the new contract, you'll first need to unstake from the old contract which is still found at the same link [here](https://0xmons.xyz/#/summon).
 
 After that, head to the Staking XMON form on the new page. You can click your balance, and the form will autopopulate. It's the same approve and stake flow you're used to. Two transactions, one to approve spending your XMON, and one to actually do the deposit.
 
@@ -42,5 +42,5 @@ With the date being now set in advance, I hope people can make their arrangement
 
 # Next Steps
 
-For the next few days, I'll be finishing up generation of the new 0xmons. I will also be monitoring the staking contract and UI in case any issues arise. If there are no other complications, I will be excited for everyone to unveil the new series of 0xmons this Friday.
+For the next few days, I'll be finishing up the series 2 generation of the new 0xmons. I will also be monitoring the staking contract and UI in case any issues arise. If there are no other complications, I will be excited for everyone to unveil the new series of 0xmons this Friday.
 
