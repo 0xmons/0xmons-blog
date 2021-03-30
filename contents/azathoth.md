@@ -25,7 +25,7 @@ So, what makes 0xmons cool?
 
 1. **Fully unique NFT:** Unlike other projects, every single 0xmon is 1 of 1. No one else will have the same 0xmon with your animation, name, epithet, or lore.
 2. **Human-AI hybrid creativity:** Each 0xmon's animation, name, epithet, and lore was originally AI generated, and then hand-tweaked by a human (me!) This allows for a very interesting type of joint creative content that is currently rare in the NFT space.
-3. **Onchain data:** (In Development) I'm currently working on a way for 0xmon users to encode their 0xmon's data directly on chain which solidifies their digital presence and allows for true art ownership, even if IPFS fails.
+3. **Onchain data:** The entirety of each NFT can be fully encoded directly on Ethereum. See details [here](https://blog.0xmons.xyz/79081566310).
 
 # Farming
 You can currently stake XMON-ETH LP tokens to acquire more XMON tokens. This is the normal farming you're used to, no extra gimmicks. 
