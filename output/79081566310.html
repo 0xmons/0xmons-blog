@@ -76,7 +76,7 @@
 
 <p><img src="https://i.imgur.com/xrRQrK7.png" alt="new register menu" /></p>
 
-<p>There is a dropdown that lets you select between Static and Animated. This refers to the 0xmon image. In both cases, the name, epithets, and lore will also be encoded into the payload. Even though the 400,000-2,000,000 gas estimate is &#8220;more reasonable&#8221; to encode a 0xmon, I&#8217;ve also added the option to encode just the static image which should be around 10 times less expensive, i.e. around 40,000 to 200,000 gas to encode.</p>
+<p>There is a dropdown that lets you select between Static and Animated. This refers to the 0xmon image, whether it&#8217;s the non-moving one or the animated one. In both cases, the name, epithets, and lore will also be encoded into the payload. Even though the 400,000-2,000,000 gas estimate is &#8220;more reasonable&#8221; to encode an animated 0xmon, I&#8217;ve also added the option to encode just the static image which should be around 10 times less expensive, i.e. around 40,000 to 200,000 gas to encode.</p>
 
 <p>If this is your first time, and you want the front-end to handle everything, simply select if you wish to encode the static or animated image, and hit the Upload button. As the picture above describes, there will be three transactions you have to accept in order to make things work. The first encodes the image in the input field. The second approves the registry contract to spend XMON for the register fee, and the third actually adds the transaction hash to the contract&#8217;s mapping.</p>
 
@@ -92,15 +92,30 @@
 
 <p><img src="https://i.imgur.com/XSNQLlQ.png" alt="image of lightning bolt and lock" /></p>
 
-<p>The lightning bolt button lets others know that you&#8217;ve encoded the <em>static</em> data on-chain, while the lock button lets others know that you&#8217;ve encoded the <em>animated</em> data on-chain. You can also click on the icon to take you to a new 0xmons showcase page that reads and decodes directly from on-chain:</p>
+<p>The lightning bolt button lets others know that you&#8217;ve encoded the <em>static</em> data on-chain, while the lock button lets others know that you&#8217;ve encoded the <em>animated</em> data on-chain. You can also click on the icon to take you to a <a href="https://0xmons.xyz/#/on-chain/11">new 0xmons showcase page</a> that reads and decodes directly from on-chain:</p>
 
 <p><img src="https://i.imgur.com/dWMsjd4.png" alt="on-chain version" /></p>
 
-<p>It looks exactly the same.</p>
+<p>It looks exactly the same, and that&#8217;s the whole point.</p>
 
-<p>That&#8217;s the whole point.</p>
+<h1>Encoding Details</h1>
 
-<p>I&#8217;ve yet to set up a special icon for those fervent few that decide to encode the entirety of the static image into the contract storage itself, but rest assured there will be a cool distinction between that and the &#8220;normal&#8221; static encoding. Provided, of course, that someone actually goes and does it.</p>
+<p>For those curious, here&#8217;s how the encoding basically works:</p>
+
+<ol>
+<li>Convert the image (static or animated) to base64.</li>
+<li>Put the name, epithet, lore, and base64 image into one string payload.</li>
+<li>Convert from ascii to bytes using web3.</li>
+<li>Upload as bytes.</li>
+</ol>
+
+<p>And the decoding does the reverse:</p>
+
+<ol>
+<li>Grab the info from on-chain, go from bytes to ascii.</li>
+<li>Separate out the payload into name, epithet, lore, and image.</li>
+<li>Load the image as base64.</li>
+</ol>
 
 <h1>Conclusion</h1>
 
@@ -114,7 +129,7 @@
 
 <div class="hidden">Everything is totally fine. Yes. Going all exactly to plan. It's been 17 days, 14 hours, and 12 minutes. And they still don't think the monsters are real. Good.</div>
 </div>
-<div class="last-updated">Last Updated: 2021-03-07 23:36</div>
+<div class="last-updated">Last Updated: 2021-04-28 22:01</div>
 
     </div>
     <div class="grid_spacer"></div>
