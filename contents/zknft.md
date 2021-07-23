@@ -46,5 +46,5 @@ The zkSync API technically allows for arbitrary bundle swaps of assets. Currentl
 
 Those are the three features at launch, and I encourage you to play around and see what it's like to mess with NFTs on a zk-rollup.
 
-On top of all this, due to Alex Gluchowski's insistence, the [ZKNFT code](https://github.com/0xmons/zknft) is licensed under the permissive MIT license. Feel free to remix and use for any personal *or* commercial use!
+All mints/transfers/swaps on ZKNFT have *no additional fees*. Partially this is because the ZKNFT API makes it annoying to bundle additional fees into operations. But the other reason, of course, is that I think it's useful to have at least one open marketplace that the community can play with. Due to Alex Gluchowski's insistence, the [ZKNFT code](https://github.com/0xmons/zknft) is licensed under the permissive MIT license. Feel free to remix and use for any personal *or* commercial use, and PRs are always open!
 
