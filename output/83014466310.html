@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  
+  <!-- Block for title, css, scripts, etc.-->
+  
+<title>ZKNFT alpha release</title>
+<link rel="stylesheet" href="./styles/post.css">
+
+  
+</head>
+
+<body>
+
+  <div class="centered">
+  <a href="https://0xmons.xyz" class="home">0xmons Home</a>
+  </div>
+  
+  
+
+
+  <div class="grid">
+    <div class="grid_spacer"></div>
+    <!-- Block for content -->
+    <div class="content">
+      
+<div class="post-title">ZKNFT alpha release</div>
+<div class="content"><p>I&#8217;m excited to announce that <a href="https://zknft.xyz/#/">ZKNFT</a> is now released for the public! Be warned, this is an <strong>alpha release</strong>, so there will be some bugs! </p>
+
+<p>First, for those who don&#8217;t know, ZKNFT is a proof-of-concept NFT marketplace showcasing the zkSync NFT API. </p>
+
+<p><img src="https://i.imgur.com/f7RV1jl.png" alt="home page" /></p>
+
+<p><a href="https://zksync.io/">zkSync</a> is a zk-rollup that supports ERC20 tokens, NFTs, and asset swaps. They&#8217;re adding full programmability later this year, including Solidity support.</p>
+
+<p><em>*Full Disclosure: I was given a grant to work on ZKNFT, so it&#8217;s a community release and not an &#8220;official&#8221; zkSync product. *</em></p>
+
+<p>For those who are curious how NFTs work technically on zkSync, the <a href="https://zksync.io/dev/nfts/#what-s-live">dev docs</a> are a good place to dive in. Briefly, though, there are a few changes compared to what you might be used to on other EVM chains:</p>
+
+<ol>
+<li>Rather than deploying your own NFT contract, all NFTs on zkSync are issued from the &#8220;same&#8221; contract. They all have sequential IDs.</li>
+<li>Related to 1, you are restricted to a 32 byte content hash for each NFT that you mint. For ZKNFT, we interpret this as the IPFS hash for a metadata JSON object that conforms to the <a href="https://docs.opensea.io/docs/metadata-standards.">OpenSea metadata standard</a></li>
+<li>There is a delay of a few hours between minting and full &#8220;finality&#8221; on L1 because of the zero-knowledge proof generation. Thus,NFT  transfers on zkSync can only happen a few hours after mint.</li>
+</ol>
+
+<p>In exchange for this, however, there are several great benefits:</p>
+
+<ol>
+<li>You can migrate your NFTs from zkSync back to Ethereum mainnet. If you choose to migrate your NFT back to L1, you can choose a minting contract of your choice, which adds some more optionality.</li>
+<li>As a zk-rollup, zkSync allows for more throughput meaning computation costs are much lower. Mints/transfers/swaps all cost somewhere in the range of 0.00006 ETH!</li>
+<li>You can exit the rollup within hours, rather than days (compared to an optimistic rollup), for much more convenience.</li>
+</ol>
+
+<p>So, what&#8217;s live on ZKNFT today?</p>
+
+<p>First of all, <strong>minting</strong>.</p>
+
+<p><img src="https://i.imgur.com/FqhPMPh.png" alt="minting page" /></p>
+
+<p>Just like on other minting platforms, you have a familiar form to input all of your NFTs metadata, and then mint the NFT. Behind the scenes, the images are pinned to IPFS using <a href="https://nft.storage/">nft.storage</a> which is powered by Protocol Labs. </p>
+
+<p>Secondly, <strong>managing</strong>.</p>
+
+<p><img src="https://i.imgur.com/51I18yC.png" alt="nft view page" /></p>
+
+<p>You can view your zkSync NFT collection and send your NFTs to other addresses. You can also view the collections of others, individual NFTs, etc.</p>
+
+<p>Thirdly, <strong>swaps</strong>.</p>
+
+<p><img src="https://i.imgur.com/hmstCw4.png" alt="offer page" /></p>
+
+<p>The zkSync API technically allows for arbitrary bundle swaps of assets. Currently, you can NFT to NFT or NFT for ETH swaps on ZKNFT. You can make offers in either NFT or ETH, and the owner can accept them.</p>
+
+<p>(In fact, you can pay for <em>all</em> transactions on zkSync using one of many different supported tokens (e.g. DAI or ZRX), but, again, for simplicity, all fees on ZKNFT are taken in ETH.)</p>
+
+<p>Those are the three features at launch, and I encourage you to play around and see what it&#8217;s like to mess with NFTs on a zk-rollup.</p>
+
+<p>On top of all this, due to Alex Gluchowski&#8217;s insistence, the <a href="https://github.com/0xmons/zknft">ZKNFT code</a> is licensed under the permissive MIT license. Feel free to remix and use for any personal <em>or</em> commercial use!</p>
+</div>
+<div class="last-updated">Last Updated: 2021-07-23 11:23</div>
+
+    </div>
+    <div class="grid_spacer"></div>
+  </div>
+</body>
+
+</html>
