@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  
+  <!-- Block for title, css, scripts, etc.-->
+  
+<title>Trustless NFT Lotteries with ChainLink</title>
+<link rel="stylesheet" href="./styles/post.css">
+
+  
+</head>
+
+<body>
+
+  <div class="centered">
+  <a href="https://0xmons.xyz" class="home">0xmons Home</a>
+  </div>
+  
+  
+
+
+  <div class="grid">
+    <div class="grid_spacer"></div>
+    <!-- Block for content -->
+    <div class="content">
+      
+<div class="post-title">Trustless NFT Lotteries with ChainLink</div>
+<div class="content"><p>Soon you&#8217;ll be able to run your own NFT lotteries, powered by ChainLink. I&#8217;m really excited for this because it leverages blockchain in all the relevant ways: it&#8217;s the distribution of a digital asset in a trustless manner, with all conditions clear for everyone to see.</p>
+
+<p>NFT-Lottery is launching soon on testnet, and then mainnet soon after. Thus, I thought I&#8217;d write a little bit about how v0 will work, and what will be live at launch.</p>
+
+<p>To start, NFT-Lottery is completely permission0less. Anyone will be able to create a lottery for any ERC721 that they own for any price. An NFT lottery is basically a ticket sale (in v0, tickets are sold in ETH) where a random ticket holder then gets a specified NFT at the end of the duration. NFT-Lottery uses ChainLink&#8217;s VRF to select a random ticket holder.</p>
+
+<p>To improve the experience for both buyers and lottery creators, NFT-Lottery has several cool features:</p>
+
+<p>First, the NFT is escrowed into the lottery contract during creation, so buyers know the NFT will be guaranteed there to be distributed at the end of the lottery.</p>
+
+<p>Secondly, lottery creators have to specify a minimum number and maximum number of tickets to sell. If the minimum number isn&#8217;t reached by the end of the lottery, buyers can burn their tickets to get their ETH back. As a corollary, the lottery creator can&#8217;t claim their ETH until the NFT has been distributed.</p>
+
+<p>Thirdly, the tickets themselves are NFTs with on-chain metadata/image that track the progress of the lottery. Users can get a rough idea of how the lottery is progressing, even from platforms like OpenSea.</p>
+
+<p>Fourthly, <em>lottery creators keep all ETH from their ticket sales</em>. The NFT-Lottery platform only takes a flat fee during lottery creation.</p>
+
+<p>The code is up on GitHub, has been robustly unit-tested, and peer reviewed. The next steps are building out a UI for testnet, and then an alpha mainnet launch afterwards. If you&#8217;d like to create a lottery for your own ERC721s, let me know on Twitter!</p>
+</div>
+<div class="last-updated">Last Updated: 2021-08-01 13:19</div>
+
+    </div>
+    <div class="grid_spacer"></div>
+  </div>
+</body>
+
+</html>
