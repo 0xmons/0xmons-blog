@@ -50,7 +50,7 @@
 
 <p>LSSVM allows users to get immediate quotes on either the buy or the sell side for their NFTs. Particularly on the sell side, this will ideally give better slippage than existing methods (e.g. relying on an x*y=k + fractionalized token AMM or simply accepting the best offer on OpenSea). This is in part due to the lack of existing good ways to create floor bids for any NFT in a collection. LSSVM allow for doing so in an on-chain way, with pricing that behaves predictably. The most simple example is someone locking up X ETH to buy NFTs at Y price (assuming a constant bonding curve).</p>
 
-<p>For liquidity providers, single-sided pools allow for DCA&#8217;ing in or out of a large NFT position. For example, a buy-side pool that buys its first NFT for 10 ETH, then 9 ETH, then 8 ETH, etc. (assuming linearly decreasing bonding curve). Or a sell-side pool that sells its first NFT for 1 ETH, then 1.5 ETH, then 2.25 ETH etc. (assuming exponential increasing bonding curve). For NFTs, spreads can be quite large, in part due to a combination of royalty and marketplace fees. To account for this, liquidity providers who wish to be automatic market makers can set custom spreads between buy and ask to profit off volume for their pools. </p>
+<p>For liquidity providers, single-sided pools allow for DCA&#8217;ing in or out of a large NFT position. For example, a buy-side pool that buys its first NFT for 10 ETH, then 9 ETH, then 8 ETH, etc. (assuming linearly decreasing bonding curve). Or a sell-side pool that sells its first NFT for 1 ETH, then 1.5 ETH, then 2.25 ETH etc. (assuming exponential increasing bonding curve). For NFTs, spreads can be quite large, in part due to a combination of royalty and marketplace fees. To account for this, liquidity providers who wish to be automatic market makers can set custom spreads between buy and sell to profit off trading volume for their pools. </p>
 
 <p>This is the gist of the protocol. There are of course still many areas for improvement. </p>
 
@@ -58,9 +58,9 @@
 
 <p>The second is the question of on-chain vs off-chain. Because the bonding curves for LSSVM are on-chain, comptuation is limited. LPs who want a more sophisticated pricing strategy might find even arbitrary bonding curves to be insufficient for them to respond to the market. This motivates the question of having some sort of hybrid model where we can move more of the pricing calculations off-chain. This is something I&#8217;m still thinking more about. However, I think there are several nice benefits to the on-chain model which make it worth building out, if only  for easier integrations with other protocols. For example, having a buy-only pool with ETH locked in at a constant bonding curve, with liquidity locked for X amount of time allows for easier loans and liquidations if being used in tandem with a lending platform like Bunchy Protocol.</p>
 
-<p>I&#8217;m actively working on developing LSSVM at the moment as the next-next upgrade for Sudoswap. (That&#8217;s two upgrades away–the next upgrade is better order books). If any of the above seems interesting, and you&#8217;d want to chat, please reach out via Twitter or Discord! Otherwise, I hope this provides more detail into exactly how I envision the protocol working and provides a starting point for others thinking in a similar direction.</p>
+<p>I&#8217;m actively working on developing LSSVM at the moment as the next-next upgrade for sudoswap. (That&#8217;s two upgrades away–the next upgrade is better order books). If any of the above seems interesting, and you&#8217;d want to chat, please reach out via Twitter or Discord! Otherwise, I hope this provides more detail into exactly how I envision the protocol working and provides a starting point for others thinking in a similar direction.</p>
 </div>
-<div class="last-updated">Last Updated: 2021-08-06 17:16</div>
+<div class="last-updated">Last Updated: 2021-08-06 17:30</div>
 
     </div>
     <div class="grid_spacer"></div>
