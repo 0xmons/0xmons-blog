@@ -3,9 +3,9 @@
         "title": "0xmons v1 Launch",
         "anchor": "78650466310",
         "summary": "The initial launch of the [0xmons](https://www.0xmons.xyz) platform is now live! Version 1 (Azathoth) is now released with two main components: Farmin...",
-        "word_count": 1289,
-        "date": "2021-01-20 15:03",
-        "last_updated": 1611183819
+        "word_count": 1270,
+        "date": "2021-03-29 16:20",
+        "last_updated": 1617060018
     },
     "79085966310": {
         "title": "0xmons Project Updates",
@@ -35,9 +35,9 @@
         "title": "0xmons v2 Cthulhu: On-chain Encoding",
         "anchor": "79081566310",
         "summary": "I'm excited that 0xmons can now be encoded directly on the Ethereum blockchain. Sort of. This post will explain the thinking behind why I'm so excited...",
-        "word_count": 1917,
-        "date": "2021-01-31 00:29",
-        "last_updated": 1612081745
+        "word_count": 1935,
+        "date": "2021-04-28 22:01",
+        "last_updated": 1619672494
     },
     "80647066310": {
         "title": "0xmon Series 1 Finished! Next Steps",
@@ -54,5 +54,77 @@
         "word_count": 1190,
         "date": "2021-02-18 13:18",
         "last_updated": 1613683121
+    },
+    "79122166310": {
+        "title": "0xmons v3 Dagon: Multisender, Composable NFTs",
+        "anchor": "79122166310",
+        "summary": "I'm excited to announce a new development milestone in the 0xmons project, so we're bumping it up to a new version again. This time, it's Dagon, one o...",
+        "word_count": 675,
+        "date": "2021-03-18 15:30",
+        "last_updated": 1616106609
+    },
+    "81127166310": {
+        "title": "0xmons Series 2 Plans",
+        "anchor": "81127166310",
+        "summary": "I'm excited to announce that the second series of 0xmons have finally been completed. This post will outline the details for how migrating your DOOM a...",
+        "word_count": 1625,
+        "date": "2021-03-29 19:12",
+        "last_updated": 1617070356
+    },
+    "81062366310": {
+        "title": "Series 2 Migration Guide",
+        "anchor": "81062366310",
+        "summary": "I'm excited to announce that the new staking contract for series 2 is now live on mainnet [here](https://etherscan.io/address/0xA3300bfc13556Fa5146fFd...",
+        "word_count": 636,
+        "date": "2021-03-29 20:31",
+        "last_updated": 1617075119
+    },
+    "81423166310": {
+        "title": "Upcoming Things",
+        "anchor": "81423166310",
+        "summary": "Now that series 2 is underway, and I have tied up loose ends with migration, I want to give an update on the various 0xmons-related projects for the e...",
+        "word_count": 392,
+        "date": "2021-04-08 13:15",
+        "last_updated": 1617912930
+    },
+    "81091366310": {
+        "title": "4-16-21 Update",
+        "anchor": "81091366310",
+        "summary": "Since last week's [update](https://blog.0xmons.xyz/81423166310) on various projects in the 0xmons ecosystem, a few more exciting things have gone live...",
+        "word_count": 513,
+        "date": "2021-04-16 20:10",
+        "last_updated": 1618629048
+    },
+    "83014466310": {
+        "title": "ZKNFT alpha release",
+        "anchor": "83014466310",
+        "summary": "I'm excited to announce that [ZKNFT](https://zknft.xyz/#/) is now released for the public! Be warned, this is an **alpha release**, so there will be s...",
+        "word_count": 562,
+        "date": "2021-07-23 11:46",
+        "last_updated": 1627065992
+    },
+    "83439466310": {
+        "title": "Trustless NFT Lotteries with ChainLink",
+        "anchor": "83439466310",
+        "summary": "Soon you'll be able to run your own NFT lotteries, powered by ChainLink. I'm really excited for this because it leverages blockchain in all the releva...",
+        "word_count": 331,
+        "date": "2021-08-01 13:27",
+        "last_updated": 1627849646
+    },
+    "83017366310": {
+        "title": "sudoswap v69: An NFT AMM",
+        "anchor": "83017366310",
+        "summary": "A few weeks ago, I wrote a [litepaper](https://0xmons.xyz/assets/nftamm.pdf) about another way to approach NFT financialization, via an NFT AMM, inste...",
+        "word_count": 1004,
+        "date": "2021-08-06 17:30",
+        "last_updated": 1628296244
+    },
+    "82403366310": {
+        "title": "NFT-LOTTERY Launch",
+        "anchor": "82403366310",
+        "summary": "![nft lottery home](https://i.imgur.com/0cK61gt.png)\n\n[NFT-LOTTERY](https://nft-lottery.xyz/#/) is now live on mainnet! Powered by ChainLink's VRF for...",
+        "word_count": 539,
+        "date": "2021-08-13 11:14",
+        "last_updated": 1628878498
     }
 }
