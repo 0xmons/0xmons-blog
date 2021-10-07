@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  
+  <!-- Block for title, css, scripts, etc.-->
+  
+<title>Clustering 0xmons</title>
+<link rel="stylesheet" href="./styles/post.css">
+
+  
+</head>
+
+<body>
+
+  <div class="centered">
+  <a href="https://blog.0xmons.xyz" class="home">0xmons Blog</a>
+  </div>
+  
+  
+
+
+  <div class="grid">
+    <div class="grid_spacer"></div>
+    <!-- Block for content -->
+    <div class="content">
+      
+<div class="post-title">Clustering 0xmons</div>
+<div class="content"><p>One of the things that I like about the 0xmons project is the lack of direct rarity when it comes to traits. The epithet, animation, and lore are all unique. (Except for two specific epithets).</p>
+
+<p>But there is a very visual trait by which someone might want to understand the 0xmons, and that is by their color. A cursory look through the <a href="https://0xmons.xyz/#/all">pantheon</a> yields commonly occurring pallets of reds, blues, greens, and more.</p>
+
+<p><img src="https://i.imgur.com/bknVGlt.png" alt="image of several 0xmons" /></p>
+
+<p>A more recent addition to the 0xmons page added a way for users to classify their 0xmon by color. This was not added to the official metadata, and was more of a personal classification. My own categorization, of course, can be contentious, and some monsters can indeed be much more chromatically ambiguous. </p>
+
+<p>To allow other people to explore various ways of reckoning with these pixel GAN monsters, I&#8217;ve released  <a href="https://github.com/0xmons/0xmons-clustering/blob/main/Clustering.ipynb">this Jupyter Notebook</a> which will allow anyone to get started with their own color categorizations.</p>
+
+<p>Below, I&#8217;ll outline the steps that the notebook takes, and hopefully you learn something along the way. This will be a short summary of the Jupyter Notebook, so feel free to just dive straight in there, and then jump to the end of this blog post for a fun interactive exploration.</p>
+
+<p>To start, we&#8217;re going to reduce each image to the same set of colors. The monsters have a varied pallet, and comparisons between them will be easier if we use the same baseline. You can change which colors you want to use in the code, but for this example visualization, I&#8217;ve used these:</p>
+
+<p><img src="https://i.imgur.com/fkdRHdF.png" alt="colors used image" /></p>
+
+<p>Now, we&#8217;ll need to take each 0xmon pixel and map it to the color it&#8217;s closest to.</p>
+
+<p>Here&#8217;s an example of a before and after using <a href="https://0xmons.xyz/#/mon/12">#12 Zhar &amp; Lloigor</a>. </p>
+
+<p>The original image:</p>
+
+<p><img src="https://i.imgur.com/tYkWtUe.png" alt="initial image" /> </p>
+
+<p>The reduced color image:</p>
+
+<p><img src="https://i.imgur.com/3V4o4u1.png" alt="reduced colors image" /></p>
+
+<p>Now that we can represent each image as a collection of the same color, we can now compare their color <em>distributions</em>. The chart below shows how many pixels of each color are in our reduced color image:</p>
+
+<p><img src="https://i.imgur.com/pMeewoo.png" alt="color histogram" /></p>
+
+<p>We can turn every 0xmon into a color histogram, a summary of each image&#8217;s colors, while ignoring spatial information. It&#8217;s a lossy representation, but because the focus of this analysis is on color, we&#8217;re willing to sacrifice fidelity for an easier analysis. </p>
+
+<p>How can we visualize all of these histograms on one graph? The answer is dimensionality reduction. Similar to the step we just took of converting each image into a histogram of 11 colors, we can further reduce each histogram into just 2 dimensions, which will allow us to plot them out.</p>
+
+<p>In the Notebook, we explore various ways of scaling the data, followed by two different dimensionality reduction techniques (PCA and T-SNE). Here&#8217;s the final visualization:</p>
+
+<p><img src="https://i.imgur.com/2SWWhZE.png" alt="visualization of each 0xmon" /></p>
+
+<p>Each dot is a 0xmon, and the color of the dot is the most common color found in its image. Now, we can see some natural clusters appear. But which dot corresponds to which 0xmon? Unfortunately, native Python is not the friendliest language for interactive data visualizations.</p>
+
+<p>To improve your exploratory experience of these eldritch edifices, I&#8217;ve done the heavy lifting and translated the above graph to JavaScript! (No charting libraries needed, it&#8217;s raw HTML <code>canvas</code> manipulation, all so you can enjoy a slightly smaller bundle size for the 0xmons site. You&#8217;re welcome.) </p>
+
+<p><img src="https://i.imgur.com/S3xhcXn.png" alt="interactive screenshot" /></p>
+
+<p>Go <a href="https://0xmons.xyz/#/cluster">here</a> to play around with zooming in and out of the different monsters to see which natural clusters appear. As always, the code is up on GitHub, so feel free to fork and add in your own coordinates for local explorations.</p>
+
+<p>Next exploration after this one: graphing the lore overlaps between 0xmons.</p>
+</div>
+<div class="last-updated">Last Updated: 2021-10-06 22:13</div>
+
+    </div>
+    <div class="grid_spacer"></div>
+  </div>
+</body>
+
+</html>
